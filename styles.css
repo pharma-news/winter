@@ -1,0 +1,277 @@
+/* ============================================================
+   до нового года · зимняя ночь
+   палитра и переходы сняты с кадра «Жил-был пёс» (1982):
+   вверху — синий мрак, в середине — чёрная даль, как бездна,
+   внизу — снег, который выходит из темноты на свет
+   ============================================================ */
+
+:root {
+  --sky-top:   #01034a;
+  --sky-mid:   #02045c;
+  --sky-deep:  #000006;
+  --field:     #050b28;
+  --snow-1:    #0c1846;
+  --snow-2:    #21406f;
+  --snow-3:    #2f5590;
+  --snow-4:    #456fb8;
+  --snow-5:    #4f75c8;
+  --snow-6:    #88aede;
+  --snow-7:    #dcebf8;
+  --white:     #f2f8ff;
+  --ink:       #000006;
+  --lamp:      #eeb45f;
+  --font: Georgia, "Times New Roman", "Palatino Linotype", serif;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: #000006;
+  color: var(--snow-7);
+  font-family: var(--font);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--snow-4); color: #01031f; }
+
+/* ---------- занавес при входе ---------- */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-content: center;
+  background: #000006;
+  transition: opacity 2s ease, visibility 2s;
+}
+#preloader.gone { opacity: 0; visibility: hidden; }
+#preloader .flakes {
+  margin: 0;
+  font-size: 30px;
+  color: #9db9dc;
+  animation: fall 3.4s ease-in-out infinite;
+}
+@keyframes fall {
+  0%   { opacity: 0; transform: translateY(-16px) rotate(0deg); }
+  40%  { opacity: .9; }
+  100% { opacity: 0; transform: translateY(18px) rotate(120deg); }
+}
+
+/* ---------- верхняя панель ---------- */
+
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px clamp(14px, 3vw, 30px);
+  pointer-events: none;
+}
+.tools { display: flex; gap: 8px; pointer-events: auto; }
+
+.btn {
+  font: inherit;
+  color: #a9c1de;
+  background: rgba(0, 2, 16, .5);
+  border: 1px solid rgba(150, 180, 220, .18);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(7px);
+  transition: color .3s, border-color .3s, background .3s, transform .3s;
+}
+.btn:hover { color: #eaf2fb; border-color: rgba(180, 205, 235, .5); background: rgba(10, 24, 66, .6); transform: translateY(-1px); }
+.btn.on { color: #04081e; background: #9fbede; border-color: #9fbede; }
+.btn:focus-visible { outline: 2px solid #9fbede; outline-offset: 3px; }
+.btn.icon { width: 40px; height: 40px; padding: 0; display: grid; place-content: center; }
+.btn.icon svg { width: 21px; height: 21px; display: block; }
+
+/* ---------- сцена ---------- */
+
+#hero {
+  position: relative;
+  height: 100svh;
+  min-height: 520px;
+  overflow: clip;
+  isolation: isolate;
+  background:
+    /* свет над дальним полем — единственный источник воздуха */
+    radial-gradient(125% 62% at 50% 104%, rgba(79, 117, 200, .34), rgba(0, 0, 8, 0) 62%),
+    /* холодное марево над сугробами */
+    radial-gradient(70% 26% at 34% 74%, rgba(120, 160, 220, .13), rgba(0, 0, 8, 0) 70%),
+    /* колодец: центр неба проваливается в черноту */
+    radial-gradient(96% 62% at 48% 46%, rgba(0, 0, 4, .92), rgba(0, 0, 4, 0) 78%),
+    linear-gradient(180deg,
+      #00011e 0%, #01034a 16%, #02045c 32%, #010234 44%,
+      #000004 57%, #01030f 66%, #03081f 74%, #050b28 84%, #0a1440 100%);
+}
+
+#scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.px { transition: transform .7s cubic-bezier(.2, .8, .3, 1); }
+
+#snow-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  cursor: crosshair;
+}
+
+/* плёночное зерно и виньетка: край ночи темнее */
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+  background:
+    radial-gradient(118% 86% at 50% 42%, transparent 34%, rgba(0, 0, 6, .72) 100%),
+    linear-gradient(180deg, rgba(0, 0, 6, .55) 0, transparent 22%);
+}
+.grain {
+  position: absolute;
+  inset: -20%;
+  z-index: 14;
+  pointer-events: none;
+  opacity: .055;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+  animation: grain 1.4s steps(4) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2.5%, 1.5%); }
+  50% { transform: translate(1.5%, -2%); }
+  75% { transform: translate(-1%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- отсчёт ---------- */
+
+.hero-count {
+  position: absolute;
+  z-index: 40;
+  top: clamp(34px, 8.5vh, 104px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: baseline;
+  gap: clamp(6px, 1.5vw, 20px);
+  pointer-events: none;
+  filter: drop-shadow(0 6px 40px rgba(0, 0, 8, .85));
+}
+.hero-count .unit { text-align: center; }
+.hero-count b {
+  display: block;
+  font-weight: 400;
+  font-size: clamp(44px, 10.4vw, 126px);
+  line-height: .96;
+  letter-spacing: .015em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: #b8cfe8;
+  text-shadow:
+    0 0 22px rgba(150, 185, 230, .34),
+    0 0 80px rgba(70, 105, 175, .34),
+    0 2px 2px rgba(0, 0, 6, .8);
+}
+.hero-count .sep {
+  font-size: clamp(18px, 4vw, 46px);
+  color: #5c7ba6;
+  opacity: .5;
+  transform: translateY(-.1em);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: .12; } 50% { opacity: .55; } }
+.hero-count b.blink { animation: blink .8s ease; }
+@keyframes blink {
+  0% { opacity: 1; transform: translateY(0); }
+  35% { opacity: .3; transform: translateY(-3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-count.hit b {
+  color: #f0f6ff;
+  text-shadow: 0 0 30px rgba(238, 180, 95, .6), 0 0 110px rgba(140, 175, 230, .8);
+}
+
+/* ---------- интерактив внутри сцены ---------- */
+
+.tappable { cursor: pointer; }
+.tappable:focus-visible { outline: 2px solid #9fbede; outline-offset: 3px; }
+
+.twinkle { animation: tw var(--d, 5s) ease-in-out infinite; }
+@keyframes tw { 0%, 100% { opacity: .18; } 50% { opacity: .75; } }
+#starmap { transition: transform .8s cubic-bezier(.2, .8, .3, 1); }
+
+#branch { animation: branch-sway 11s ease-in-out infinite; transform-origin: 1000px 0; }
+@keyframes branch-sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(1.1deg); } }
+#branch.shaking { animation: branch-shake .8s ease; }
+@keyframes branch-shake {
+  0% { transform: rotate(0deg); }
+  18% { transform: rotate(-4deg) translateY(6px); }
+  42% { transform: rotate(2.6deg) translateY(-2px); }
+  68% { transform: rotate(-1.6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* окна: горят неровно, как за стеклом */
+.lit { animation: flicker 6s infinite; transition: opacity .35s; }
+@keyframes flicker {
+  0%, 100% { opacity: .92; }
+  18% { opacity: .8; }
+  24% { opacity: .99; }
+  41% { opacity: .7; }
+  47% { opacity: .95; }
+  66% { opacity: .84; }
+  72% { opacity: 1; }
+}
+.lit.warm-burst { opacity: 1; filter: drop-shadow(0 0 16px var(--lamp)); }
+
+/* дым из трубы */
+.smoke { animation: smoke 9s ease-in-out infinite; transform-origin: 158px 300px; }
+@keyframes smoke {
+  0%   { opacity: 0; transform: translateY(10px) scaleX(.9); }
+  25%  { opacity: .55; }
+  70%  { opacity: .25; }
+  100% { opacity: 0; transform: translateY(-34px) scaleX(1.35); }
+}
+
+/* ---------- подвал: только палитра ---------- */
+
+footer {
+  position: relative;
+  z-index: 20;
+  padding: 22px clamp(18px, 4vw, 40px);
+  background: #000006;
+  display: flex;
+  justify-content: center;
+}
+.palette { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.palette i {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .1) inset;
+  transition: transform .3s cubic-bezier(.2, .8, .3, 1.4);
+}
+.palette i:hover { transform: translateY(-4px) scale(1.08); }
+
+@media (max-width: 520px) {
+  .hero-count { gap: 4px; }
+  .hero-count .sep { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+}
