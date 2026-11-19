@@ -222,7 +222,7 @@
       vw = 420;
       vh = 420 / ar;
     }
-    var vx = Math.max(150, Math.min(580, 500 - vw / 2));
+    var vx = Math.max(-400, Math.min(580, 500 - vw / 2));
     var vy = 560 - vh;
     sceneEl.setAttribute('viewBox', [vx.toFixed(1), vy.toFixed(1), vw.toFixed(1), vh.toFixed(1)].join(' '));
 
@@ -239,7 +239,8 @@
           branchGhost.style.transformOrigin = '1000px 0px';
           sceneEl.appendChild(branchGhost);
         }
-        var tx = vx + vw;
+        // точка роста ветки (её правый верхний угол) ставится на левый край кадра
+        var tx = vx - 1000;
         branchGhost.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + vy.toFixed(1) + 'px) scale(-1,1)';
       } else if (branchGhost) {
         branchGhost.remove();

@@ -267,8 +267,8 @@ footer {
 }
 .palette i:hover { transform: translateY(-4px) scale(1.08); }
 
-@media (max-width: 520px) {
-  .hero-count { gap: 4px; }
+@media (max-width: 560px) {
+  .hero-count { gap: 4px; top: 19vh; }
   .hero-count .sep { font-size: 16px; }
 }
 
