@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>до нового года · зимняя ночь</title>
-<meta name="description" content="Зимняя ночь из мультика: глубокое тёмное небо, снег слоями, тёмные ели, тёплые окна вдалеке и отсчёт до нового 2027 года.">
+<meta name="description" content="Зимняя ночь из мультика: глубокое тёмное небо, снег слоями, тёмный лес, изба с тёплыми окнами и гирляндой, иногда — северное сияние и салют. Вверху — отсчёт до нового 2027 года.">
 <meta name="theme-color" content="#010326">
 <meta property="og:title" content="до нового года · зимняя ночь">
-<meta property="og:description" content="Зайти, покликать по снегу, посмотреть в зимнюю бездну и посчитать дни до нового года.">
+<meta property="og:description" content="Зайти, покликать по снегу, посмотреть в зимнюю бездну, дождаться салюта и посчитать дни до нового года.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23010326'/%3E%3Cg fill='none' stroke='%23c9ddf2' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M16 6v20M6 16h20M9 9l14 14M23 9L9 23'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -41,17 +41,34 @@
   </div>
 
   <svg id="scene" viewBox="153 0 794 560" role="img"
-       aria-label="Глубокая зимняя ночь: тёмное небо, далёкие дома с тёплыми окнами, ели, заснеженный забор и тяжёлая ветка.">
+       aria-label="Глубокая зимняя ночь: тёмное небо, лес, изба с тёплыми окнами и гирляндой, заснеженный забор, тяжёлая ветка. Иногда — северное сияние и салют.">
     <defs>
       <radialGradient id="moon-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#eaf1ff" stop-opacity=".38"/>
-        <stop offset="34%" stop-color="#c6d8f0" stop-opacity=".12"/>
+        <stop offset="0%" stop-color="#eaf1ff" stop-opacity=".3"/>
+        <stop offset="34%" stop-color="#c6d8f0" stop-opacity=".1"/>
         <stop offset="100%" stop-color="#c6d8f0" stop-opacity="0"/>
       </radialGradient>
       <radialGradient id="lamp-glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="#f2c079" stop-opacity=".5"/>
-        <stop offset="55%" stop-color="#d99a3f" stop-opacity=".16"/>
+        <stop offset="0%" stop-color="#f2c079" stop-opacity=".45"/>
+        <stop offset="55%" stop-color="#d99a3f" stop-opacity=".14"/>
         <stop offset="100%" stop-color="#d99a3f" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="hamlet-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#e0a24f" stop-opacity=".22"/>
+        <stop offset="100%" stop-color="#e0a24f" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="glass-warm" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f6cf92"/>
+        <stop offset="60%" stop-color="#e6ab55"/>
+        <stop offset="100%" stop-color="#c98a35"/>
+      </linearGradient>
+      <linearGradient id="spill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f0bb6c" stop-opacity=".26"/>
+        <stop offset="100%" stop-color="#f0bb6c" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="bulb-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffdc9b" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#ffdc9b" stop-opacity="0"/>
       </radialGradient>
       <linearGradient id="far-field" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stop-color="#000004"/>
@@ -63,21 +80,30 @@
         <stop offset="100%" stop-color="#0c1846"/>
       </linearGradient>
       <linearGradient id="d2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#132656"/>
-        <stop offset="100%" stop-color="#21406f"/>
+        <stop offset="0%" stop-color="#101f4c"/>
+        <stop offset="100%" stop-color="#1e3a6a"/>
       </linearGradient>
       <linearGradient id="d3" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2f5590"/>
-        <stop offset="100%" stop-color="#456fb8"/>
+        <stop offset="0%" stop-color="#27487e"/>
+        <stop offset="100%" stop-color="#3f68ad"/>
       </linearGradient>
       <linearGradient id="d4" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#4f75c8"/>
-        <stop offset="100%" stop-color="#6f96d4"/>
+        <stop offset="0%" stop-color="#456fb0"/>
+        <stop offset="100%" stop-color="#6390cd"/>
       </linearGradient>
+      <linearGradient id="d5" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6f96d4"/>
+        <stop offset="100%" stop-color="#8fb3e2"/>
+      </linearGradient>
+
+      <clipPath id="clip-w1"><rect x="126" y="356" width="24" height="26"/></clipPath>
+      <clipPath id="clip-w2"><rect x="206" y="356" width="22" height="26"/></clipPath>
+      <clipPath id="clip-w3"><rect x="586" y="346" width="19" height="22"/></clipPath>
+      <clipPath id="clip-w4"><rect x="634" y="348" width="16" height="20"/></clipPath>
     </defs>
 
     <!-- луна за пеленой: только свечение -->
-    <circle cx="212" cy="86" r="122" fill="url(#moon-glow)" opacity=".5"/>
+    <circle cx="212" cy="86" r="122" fill="url(#moon-glow)" opacity=".55"/>
 
     <!-- звёзды: их почти нет, это снег -->
     <g id="starmap"></g>
@@ -85,218 +111,279 @@
     <rect id="sky-hit" x="-500" y="-700" width="2000" height="1000" fill="black" opacity="0"
           style="cursor:pointer" aria-hidden="true"/>
 
-    <!-- даль: тонет в черноте -->
+    <!-- ================= даль: тонет в черноте ================= -->
     <g class="px" id="px-far" data-depth="5">
       <path d="M-620 292 C-460 286 -300 298 -120 290 C40 284 320 296 520 288 C700 283 860 293 1010 286 C1200 282 1400 292 1620 286 L1620 1200 L-620 1200 Z" fill="url(#far-field)"/>
 
-      <!-- деревня вдалеке -->
-      <g fill="#000007">
-        <path d="M690 296 L690 278 L706 278 L706 296 Z"/><path d="M686 279 L698 268 L710 279 Z"/>
-        <path d="M722 298 L722 282 L736 282 L736 298 Z"/><path d="M719 283 L729 274 L739 283 Z"/>
-        <path d="M752 299 L752 286 L764 286 L764 299 Z"/><path d="M749 287 L758 279 L767 287 Z"/>
-      </g>
-      <g fill="#c8912f" opacity=".55">
-        <rect x="694" y="284" width="3" height="4"/><rect x="726" y="287" width="3" height="4"/>
-        <rect x="755" y="290" width="2.5" height="3.5"/>
+      <!-- дальняя деревня: читаемые домики, а не точки -->
+      <g id="hamlet">
+        <ellipse cx="742" cy="300" rx="86" ry="16" fill="url(#hamlet-glow)"/>
+        <g fill="#000006">
+          <path d="M700 300 L700 285 L716 285 L716 300 Z"/><path d="M696 286 L708 276 L720 286 Z"/>
+          <path d="M726 301 L726 288 L740 288 L740 301 Z"/><path d="M723 289 L733 280 L743 289 Z"/>
+          <path d="M752 302 L752 291 L764 291 L764 302 Z"/><path d="M749 292 L758 284 L767 292 Z"/>
+          <path d="M772 302 L772 293 L782 293 L782 302 Z"/><path d="M769 294 L777 287 L785 294 Z"/>
+        </g>
+        <!-- снег на крышах -->
+        <g stroke="#7494c4" stroke-opacity=".45" stroke-width="1.4" fill="none" stroke-linecap="round">
+          <path d="M697 286 L708 277 L719 286"/><path d="M724 289 L733 281 L742 289"/><path d="M750 292 L758 285 L766 292"/>
+        </g>
+        <!-- окна: крошечные, но в пазах стен -->
+        <g class="lit">
+          <rect x="704" y="290" width="3.4" height="4.4" fill="#e5b063"/>
+          <rect x="730" y="292" width="3" height="4" fill="#d59f4e" style="animation-delay:-2.2s"/>
+          <rect x="755" y="294" width="2.6" height="3.6" fill="#e5b063" style="animation-delay:-4.1s"/>
+          <rect x="775" y="295" width="2.4" height="3.2" fill="#c8912f" style="animation-delay:-1.3s"/>
+        </g>
+        <!-- заборчик деревни -->
+        <g stroke="#000006" stroke-width="1.1" stroke-linecap="round" opacity=".9">
+          <path d="M690 302 L690 296"/><path d="M700 302 L700 296"/><path d="M710 302 L710 296"/>
+          <path d="M720 302 L720 296"/><path d="M746 303 L746 297"/><path d="M756 303 L756 297"/>
+          <path d="M766 303 L766 297"/><path d="M788 303 L788 297"/>
+          <path d="M688 299 L722 299" stroke-width=".8"/><path d="M744 300 L790 300" stroke-width=".8"/>
+        </g>
       </g>
 
-      <!-- тёмные ели: силуэты с неровными лапами -->
-      <g fill="#01020c">
-        <path d="M246 232 L228 266 L236 264 L218 296 L228 294 L212 326 L280 326 L264 294 L274 296 L256 264 L264 266 Z"/>
-        <rect x="241" y="324" width="8" height="10"/>
-        <path d="M306 254 L292 282 L299 280 L285 306 L294 304 L282 330 L330 330 L318 304 L327 306 L313 280 L320 282 Z"/>
-        <rect x="302" y="328" width="7" height="9"/>
-        <path d="M352 276 L340 300 L347 298 L336 322 L344 320 L334 340 L370 340 L360 320 L368 322 L357 298 L364 300 Z"/>
-        <rect x="348" y="338" width="6" height="8"/>
-        <path d="M812 216 L786 264 L798 261 L774 310 L788 307 L766 356 L858 356 L836 307 L850 310 L826 261 L838 264 Z"/>
-        <rect x="806" y="352" width="12" height="16"/>
-        <path d="M884 252 L864 292 L874 289 L856 330 L868 327 L852 360 L916 360 L900 327 L912 330 L894 289 L904 292 Z"/>
-        <rect x="879" y="357" width="10" height="13"/>
-        <path d="M950 282 L934 314 L943 312 L929 344 L939 342 L928 366 L972 366 L961 342 L971 344 L957 312 L966 314 Z"/>
-        <rect x="946" y="364" width="8" height="10"/>
-      </g>
-      <!-- дальние ели — просто силуэты, как в кадре: никаких бликов в небе -->
+      <!-- лес: дальняя кромка (строит js) -->
+      <g id="forest-far"></g>
     </g>
 
-    <!-- сугробы: чем ближе, тем светлее -->
+    <!-- ================= сугробы: чем ближе, тем светлее ================= -->
     <g class="px" id="px-mid" data-depth="2.6">
       <path d="M-620 316 C-420 304 -180 324 -20 312 C180 300 340 320 470 310 C650 300 830 322 1010 308 C1220 298 1420 318 1620 310 L1620 1200 L-620 1200 Z" fill="url(#d1)"/>
+      <!-- мягкая кромка первой волны -->
+      <path d="M-620 316 C-420 304 -180 324 -20 312 C180 300 340 320 470 310 C650 300 830 322 1010 308 C1220 298 1420 318 1620 310" fill="none" stroke="#02050f" stroke-opacity=".55" stroke-width="3"/>
+
       <path d="M-620 364 C-400 346 -160 372 0 358 C170 340 330 368 520 354 C700 341 860 366 1010 352 C1220 342 1420 364 1620 356 L1620 1200 L-620 1200 Z" fill="url(#d2)"/>
-      <!-- гребни, наметённые ветром -->
-      <g stroke="#9dc0e6" stroke-opacity=".13" stroke-width="1.6" fill="none" stroke-linecap="round">
-        <path d="M40 366 C130 356 210 372 300 364"/>
-        <path d="M360 372 C430 366 500 376 580 370"/>
-        <path d="M660 366 C740 359 820 372 900 366"/>
-        <path d="M120 344 C190 338 250 348 320 343"/>
+      <path d="M-620 364 C-400 346 -160 372 0 358 C170 340 330 368 520 354 C700 341 860 366 1010 352 C1220 342 1420 364 1620 356" fill="none" stroke="#0a1436" stroke-opacity=".5" stroke-width="3"/>
+      <!-- надувные сугробы: форма, а не линии -->
+      <g fill="#1c3163" fill-opacity=".55">
+        <path d="M120 360 q46 -14 96 -4 q-40 14 -96 4 z"/>
+        <path d="M430 358 q60 -12 110 -2 q-46 14 -110 2 z"/>
+        <path d="M700 358 q52 -10 96 -2 q-40 12 -96 2 z"/>
+        <path d="M-260 366 q60 -12 112 -2 q-48 14 -112 2 z"/>
       </g>
+      <g fill="#4b74b4" fill-opacity=".28">
+        <path d="M180 372 q60 -10 120 2 q-52 12 -120 -2 z"/>
+        <path d="M560 368 q56 -8 108 2 q-46 12 -108 -2 z"/>
+        <path d="M1040 366 q56 -8 104 2 q-44 12 -104 -2 z"/>
+      </g>
+
+      <!-- средние ели: стоят на второй волне, низ прячет третья (строит js) -->
+      <g id="forest-mid"></g>
     </g>
 
-    <!-- дома: тёплые окна в черноте -->
+    <!-- ================= изба и дом ================= -->
     <g class="px" id="px-houses" data-depth="1.8">
-      <g class="house">
-        <rect class="lit" x="112" y="290" width="150" height="90" fill="url(#lamp-glow)"/>
-        <rect x="152" y="300" width="13" height="17" fill="#000007"/>
-        <path class="smoke" d="M158 296 C152 282 166 272 160 256 C155 244 166 234 163 222" fill="none" stroke="#8ea8cc" stroke-opacity=".26" stroke-width="4" stroke-linecap="round"/>
-        <path d="M104 344 L178 304 L252 344 Z" fill="#01020b"/>
-        <path d="M104 344 L178 304 L252 344 L240 344 L178 313 L116 344 Z" fill="#8fb0d8" opacity=".82"/>
-        <path d="M94 344 L262 344 L262 396 L94 396 Z" fill="#000006"/>
-        <rect x="128" y="356" width="22" height="27" rx="1.5" fill="#000003"/>
-        <rect class="lit" x="131" y="359" width="16" height="21" rx="1" fill="#eeb45f"/>
-        <path d="M139 359 L139 380 M131 369.5 L147 369.5" stroke="#000003" stroke-width="1.6"/>
-        <rect x="200" y="354" width="18" height="24" rx="1.5" fill="#000003"/>
-        <rect class="lit" x="203" y="357" width="12" height="18" rx="1" fill="#d89a41" style="animation-delay:-2.4s"/>
-        <path d="M209 357 L209 375 M203 366 L215 366" stroke="#000003" stroke-width="1.4"/>
-        <path d="M116 394 C140 386 210 386 244 394 L246 402 L114 402 Z" fill="#5f88c4" opacity=".45"/>
+
+      <!-- изба: сруб, тёплые окна, гирлянда по карнизу -->
+      <g id="house-a">
+        <rect class="lit" x="96" y="290" width="180" height="110" fill="url(#lamp-glow)"/>
+
+        <!-- труба -->
+        <path d="M222 320 L222 292 L238 292 L238 322 Z" fill="#1a0f14"/>
+        <path d="M222 293 L238 293 L238 296 L222 296 Z" fill="#2b1a1f"/>
+        <path d="M219 292 q10 -7 22 0 q-2 4 -11 4 q-9 0 -11 -4 z" fill="#cfe1f4" opacity=".85"/>
+        <path class="smoke" d="M231 288 C226 276 236 268 231 256 C227 246 235 238 232 226 L236 226 C240 238 233 246 237 256 C242 268 232 276 236 288 Z" fill="#93a9c8" fill-opacity=".22"/>
+        <path class="smoke" style="--dl:-7s" d="M228 288 C224 278 232 270 228 259 C225 250 231 243 229 233 L233 233 C236 243 230 250 233 259 C237 270 230 278 233 288 Z" fill="#9fb3cf" fill-opacity=".18"/>
+
+        <!-- стены сруба -->
+        <path d="M104 344 L260 344 L260 402 L104 402 Z" fill="#070c1e"/>
+        <g stroke="#0d1530" stroke-opacity=".75" stroke-width="1.6">
+          <path d="M104 354 L260 354"/><path d="M104 364 L260 364"/><path d="M104 374 L260 374"/>
+          <path d="M104 384 L260 384"/><path d="M104 394 L260 394"/>
+        </g>
+        <!-- венцы по углам -->
+        <rect x="104" y="344" width="7" height="58" fill="#0a1128"/>
+        <rect x="253" y="344" width="7" height="58" fill="#0a1128"/>
+        <!-- цоколь -->
+        <path d="M100 396 L264 396 L264 404 L100 404 Z" fill="#04081a"/>
+
+        <!-- крыша: снежное одеяло целиком, свисает с краёв -->
+        <path d="M92 350 L182 300 L272 350 Z" fill="#050a1c"/>
+        <path d="M82 354 L182 294 L282 354 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 q-9 7 -18 0 z" fill="#a9c8e8"/>
+        <path d="M182 294 L282 354 L182 354 Z" fill="#7ea6cf" opacity=".5"/>
+        <path d="M86 350 L182 296 L278 350" fill="none" stroke="#eef5fd" stroke-opacity=".55" stroke-width="2" stroke-linecap="round"/>
+        <path d="M82 354 L282 354 L282 358 L82 358 Z" fill="#0b1226"/>
+
+        <!-- дверь: тёплая щель -->
+        <path d="M172 366 L194 366 L194 402 L172 402 Z" fill="#05091a"/>
+        <path d="M192.6 367 L193.6 367 L193.6 401 L192.6 401 Z" fill="#d59f4e" opacity=".85"/>
+        <path d="M168 400 L198 400 L198 404 L168 404 Z" fill="#7f9fca" opacity=".55"/>
+
+        <!-- окна: рама, стекло, переплёт, подоконник -->
+        <g id="win-a1">
+          <rect x="122" y="352" width="32" height="34" fill="#05091a"/>
+          <rect x="126" y="356" width="24" height="26" fill="url(#glass-warm)" class="lit"/>
+          <g clip-path="url(#clip-w1)">
+            <g class="who who-w1"><path d="M0 26 L0 13 q2 -1 3 -5 q0 -5 5 -5 q5 0 5 5 q1 4 3 5 L16 26 Z" fill="#2b1608" fill-opacity=".62" transform="translate(122,0)"/></g>
+          </g>
+          <path d="M138 356 L138 382 M126 369 L150 369" stroke="#1a1006" stroke-width="1.6" stroke-opacity=".8"/>
+          <rect x="120" y="386" width="36" height="4" fill="#0a1128"/>
+          <path d="M119 385 q18 -4 38 0 q-2 3 -19 3 q-17 0 -19 -3 z" fill="#cfe1f4" opacity=".7"/>
+          <path d="M126 382 L150 382 L156 402 L120 402 Z" fill="url(#spill)"/>
+        </g>
+        <g id="win-a2">
+          <rect x="202" y="352" width="30" height="34" fill="#05091a"/>
+          <rect x="206" y="356" width="22" height="26" fill="url(#glass-warm)" class="lit" style="animation-delay:-3.2s"/>
+          <g clip-path="url(#clip-w2)">
+            <g class="who who-w2"><path d="M0 26 L0 15 q1.5 -1 2.5 -4 q0 -4.5 4.5 -4.5 q4.5 0 4.5 4.5 q1 3 2.5 4 L14 26 Z" fill="#2b1608" fill-opacity=".6" transform="translate(200,0)"/></g>
+            <g class="cat-sil"><path d="M214 382 L214 375 q0 -3 3 -3 q3 0 3 3 L220 382 Z M212 375 L211 371 L214 373 Z M222 375 L223 371 L220 373 Z" fill="#2b1608" fill-opacity=".55"/></g>
+          </g>
+          <path d="M217 356 L217 382 M206 369 L228 369" stroke="#1a1006" stroke-width="1.6" stroke-opacity=".8"/>
+          <rect x="200" y="386" width="34" height="4" fill="#0a1128"/>
+          <path d="M199 385 q17 -4 36 0 q-2 3 -18 3 q-16 0 -18 -3 z" fill="#cfe1f4" opacity=".7"/>
+          <path d="M206 382 L228 382 L234 402 L200 402 Z" fill="url(#spill)"/>
+        </g>
+
+        <!-- гирлянда по карнизу -->
+        <path d="M92 356 Q182 374 272 356" fill="none" stroke="#0b1226" stroke-width="1.3"/>
+        <g id="garland-a">
+          <g class="bulb" style="--dl:-.2s" transform="translate(102,358)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ffcf7a"/></g>
+          <g class="bulb" style="--dl:-1.4s" transform="translate(121,361)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ff8f7a"/></g>
+          <g class="bulb" style="--dl:-.7s" transform="translate(141,363.6)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#cfe4ff"/></g>
+          <g class="bulb" style="--dl:-2.1s" transform="translate(162,365.2)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ffcf7a"/></g>
+          <g class="bulb" style="--dl:-1.1s" transform="translate(182,365.8)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#8ce3b8"/></g>
+          <g class="bulb" style="--dl:-.4s" transform="translate(203,365.2)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ffcf7a"/></g>
+          <g class="bulb" style="--dl:-1.8s" transform="translate(224,363.6)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ff8f7a"/></g>
+          <g class="bulb" style="--dl:-.9s" transform="translate(244,361)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#cfe4ff"/></g>
+          <g class="bulb" style="--dl:-2.4s" transform="translate(263,358)"><circle r="6" fill="url(#bulb-glow)"/><circle r="1.9" fill="#ffcf7a"/></g>
+        </g>
       </g>
 
-      <g class="house">
-        <rect class="lit" x="562" y="302" width="120" height="76" fill="url(#lamp-glow)" style="animation-delay:-1.5s"/>
-        <path d="M612 300 L612 288 L621 288 L621 306 Z" fill="#000007"/>
-        <path d="M566 336 L620 302 L674 336 Z" fill="#01020b"/>
-        <path d="M566 336 L620 302 L674 336 L664 336 L620 311 L576 336 Z" fill="#8fb0d8" opacity=".78"/>
-        <path d="M572 336 L668 336 L668 382 L572 382 Z" fill="#000006"/>
-        <rect x="588" y="346" width="18" height="23" rx="1.5" fill="#000003"/>
-        <rect class="lit" x="591" y="349" width="12" height="17" rx="1" fill="#eeb45f" style="animation-delay:-3.1s"/>
-        <path d="M597 349 L597 366 M591 357.5 L603 357.5" stroke="#000003" stroke-width="1.4"/>
-        <rect x="636" y="348" width="15" height="20" rx="1.5" fill="#000003"/>
-        <rect class="lit" x="638" y="350" width="11" height="16" rx="1" fill="#c88f38" style="animation-delay:-1.1s"/>
-        <path d="M643.5 350 L643.5 366 M638 358 L649 358" stroke="#000003" stroke-width="1.3"/>
-        <path d="M580 380 C600 374 646 374 662 380 L664 388 L578 388 Z" fill="#5f88c4" opacity=".4"/>
+      <!-- второй дом, дальше и меньше -->
+      <g id="house-b">
+        <rect class="lit" x="560" y="296" width="130" height="90" fill="url(#lamp-glow)" style="animation-delay:-1.5s"/>
+        <path d="M612 316 L612 296 L622 296 L622 318 Z" fill="#1a0f14"/>
+        <path d="M610 296 q7 -5 15 0 q-2 3 -7.5 3 q-5.5 0 -7.5 -3 z" fill="#cfe1f4" opacity=".8"/>
+        <path class="smoke smoke-b" d="M620 292 C616 282 624 275 620 265 C617 257 623 250 621 241 L624 241 C627 250 621 257 624 265 C628 275 621 282 624 292 Z" fill="#93a9c8" fill-opacity=".18"/>
+
+        <path d="M568 336 L668 336 L668 384 L568 384 Z" fill="#070c1e"/>
+        <g stroke="#0d1530" stroke-opacity=".7" stroke-width="1.3">
+          <path d="M568 345 L668 345"/><path d="M568 354 L668 354"/><path d="M568 363 L668 363"/><path d="M568 372 L668 372"/>
+        </g>
+        <rect x="568" y="336" width="6" height="48" fill="#0a1128"/>
+        <rect x="662" y="336" width="6" height="48" fill="#0a1128"/>
+
+        <path d="M560 342 L618 304 L676 342 Z" fill="#050a1c"/>
+        <path d="M552 345 L618 300 L684 345 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 q-7.3 5.5 -14.5 0 z" fill="#a9c8e8"/>
+        <path d="M618 300 L684 345 L618 345 Z" fill="#7ea6cf" opacity=".45"/>
+        <path d="M556 342 L618 302 L680 342" fill="none" stroke="#eef5fd" stroke-opacity=".5" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M552 345 L684 345 L684 348 L552 348 Z" fill="#0b1226"/>
+
+        <g id="win-b1">
+          <rect x="582" y="342" width="27" height="30" fill="#05091a"/>
+          <rect x="586" y="346" width="19" height="22" fill="url(#glass-warm)" class="lit" style="animation-delay:-4.4s"/>
+          <g clip-path="url(#clip-w3)">
+            <g class="who who-w3"><path d="M0 22 L0 12 q1.6 -.8 2.4 -4 q0 -4.2 4.2 -4.2 q4.2 0 4.2 4.2 q.8 3.2 2.4 4 L13.2 22 Z" fill="#2b1608" fill-opacity=".6" transform="translate(580,0)"/></g>
+          </g>
+          <path d="M595.5 346 L595.5 368 M586 357 L605 357" stroke="#1a1006" stroke-width="1.4" stroke-opacity=".8"/>
+          <rect x="580" y="372" width="31" height="3.4" fill="#0a1128"/>
+          <path d="M579 371 q15 -3.4 33 0 q-2 2.6 -16.5 2.6 q-14.5 0 -16.5 -2.6 z" fill="#cfe1f4" opacity=".65"/>
+        </g>
+        <g id="win-b2">
+          <rect x="630" y="344" width="24" height="28" fill="#05091a"/>
+          <rect x="634" y="348" width="16" height="20" fill="url(#glass-warm)" class="lit" style="animation-delay:-1.1s"/>
+          <g clip-path="url(#clip-w4)">
+            <g class="who who-w4"><path d="M0 20 L0 11 q1.4 -.7 2.1 -3.4 q0 -3.7 3.7 -3.7 q3.7 0 3.7 3.7 q.7 2.7 2.1 3.4 L11.6 20 Z" fill="#2b1608" fill-opacity=".58" transform="translate(628,0)"/></g>
+          </g>
+          <path d="M642 348 L642 368 M634 358 L650 358" stroke="#1a1006" stroke-width="1.3" stroke-opacity=".8"/>
+          <rect x="628" y="368" width="28" height="3.2" fill="#0a1128"/>
+          <path d="M627 367 q14 -3 30 0 q-2 2.4 -15 2.4 q-13 0 -15 -2.4 z" fill="#cfe1f4" opacity=".65"/>
+        </g>
+        <!-- сени -->
+        <path d="M568 356 L568 384 L580 384 L580 356 Z" fill="#04081a"/>
       </g>
     </g>
 
     <path d="M-620 420 C-400 402 -140 430 0 414 C200 396 420 428 640 412 C820 399 920 424 1010 410 C1220 398 1420 424 1620 414 L1620 1200 L-620 1200 Z" fill="url(#d3)"/>
+    <path d="M-620 420 C-400 402 -140 430 0 414 C200 396 420 428 640 412 C820 399 920 424 1010 410 C1220 398 1420 424 1620 414" fill="none" stroke="#0f1f47" stroke-opacity=".5" stroke-width="3"/>
+    <g fill="#2b4f8c" fill-opacity=".3">
+      <path d="M240 420 q70 -16 140 -2 q-60 18 -140 2 z"/>
+      <path d="M660 418 q64 -12 122 0 q-52 16 -122 0 z"/>
+      <path d="M-320 426 q70 -14 138 -2 q-58 16 -138 2 z"/>
+    </g>
+    <g fill="#7fa9de" fill-opacity=".22">
+      <path d="M330 430 q80 -12 160 2 q-70 16 -160 -2 z"/>
+      <path d="M860 428 q70 -10 132 2 q-56 14 -132 -2 z"/>
+    </g>
 
-    <!-- дальний забор: тонкие жерди, кривые -->
+    <!-- дальний забор (строит js) -->
     <g class="px" id="px-fence" data-depth="1.4">
-      <g stroke="#000007" stroke-linecap="round" fill="none">
-        <g stroke-width="5.5">
-          <path d="M32 354 L32 432"/><path d="M74 358 L74 438"/><path d="M116 351 L116 429"/>
-          <path d="M158 360 L158 442"/><path d="M200 354 L200 434"/><path d="M242 362 L242 446"/>
-        </g>
-        <g stroke-width="3.6" stroke-opacity=".95">
-          <path d="M14 386 Q120 393 256 386"/>
-          <path d="M14 410 Q120 418 256 410"/>
-          <path d="M242 366 L318 392"/><path d="M246 394 L318 370"/>
-        </g>
-      </g>
-      <g fill="#cfe1f4" opacity=".8">
-        <path d="M26 352 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-        <path d="M68 356 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-        <path d="M110 349 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-        <path d="M152 358 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-        <path d="M194 352 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-        <path d="M236 360 q6 -5 12 0 q-2 6 -7 6 q-6 0 -5 -6 z"/>
-      </g>
+      <g id="fence-mid"></g>
     </g>
 
-    <path d="M-620 482 C-380 458 -120 486 0 476 C240 452 540 492 780 470 C890 460 950 476 1010 468 C1220 456 1420 482 1620 472 L1620 1200 L-620 1200 Z" fill="url(#d4)"/>
-    <!-- тени от заборов на светлом снегу: без них он плоский -->
-    <g stroke="#16265a" stroke-opacity=".3" stroke-width="4" stroke-linecap="round" fill="none">
-      <path d="M672 470 C660 490 632 506 600 514"/>
-      <path d="M740 462 C728 484 700 500 668 508"/>
-      <path d="M808 476 C796 498 768 514 736 522"/>
-      <path d="M876 458 C864 480 836 496 804 504"/>
-      <path d="M944 470 C932 492 906 508 874 516"/>
-      <path d="M40 430 C30 446 12 456 -6 460"/>
-      <path d="M124 426 C114 442 96 452 78 458"/>
-      <path d="M208 432 C198 448 180 458 162 464"/>
-    </g>
-    <g fill="#1d3068" fill-opacity=".35">
-      <ellipse cx="178" cy="402" rx="86" ry="9"/>
-      <ellipse cx="620" cy="388" rx="60" ry="7"/>
-    </g>
+    <path d="M-620 486 C-380 462 -120 490 0 480 C240 456 540 496 780 476 C890 466 950 482 1010 474 C1220 462 1420 488 1620 478 L1620 1200 L-620 1200 Z" fill="url(#d4)"/>
+    <path d="M-620 486 C-380 462 -120 490 0 480 C240 456 540 496 780 476 C890 466 950 482 1010 474 C1220 462 1420 488 1620 478" fill="none" stroke="#28477f" stroke-opacity=".45" stroke-width="3"/>
 
-    <!-- передний забор: крупный, уходит за нижний край -->
-    <g stroke="#000006" stroke-linecap="round" fill="none">
-      <g stroke-width="11">
-        <path d="M662 404 L662 1200"/><path d="M730 396 L730 1200"/><path d="M798 410 L798 1200"/>
-        <path d="M866 392 L866 1200"/><path d="M934 404 L934 1200"/>
-      </g>
-      <g stroke-width="7" stroke-opacity=".97">
-        <path d="M640 448 Q790 460 1000 452"/>
-        <path d="M640 512 Q790 526 1000 516"/>
-        <path d="M600 430 L656 470"/><path d="M596 470 L652 434"/>
-        <path d="M698 398 L722 400" stroke-width="4"/>
-      </g>
-      <!-- припорошенная доска у земли -->
-      <path d="M700 548 L1000 534" stroke-width="9" stroke-opacity=".85"/>
-    </g>
-    <g fill="#dcebf8">
-      <g opacity=".85">
-        <path d="M650 400 q12 -6 24 0 q-4 7 -13 7 q-10 0 -11 -7 z"/>
-        <path d="M718 392 q12 -6 24 0 q-4 7 -13 7 q-10 0 -11 -7 z"/>
-        <path d="M786 406 q12 -6 24 0 q-4 7 -13 7 q-10 0 -11 -7 z"/>
-        <path d="M854 388 q12 -6 24 0 q-4 7 -13 7 q-10 0 -11 -7 z"/>
-        <path d="M922 400 q12 -6 24 0 q-4 7 -13 7 q-10 0 -11 -7 z"/>
-      </g>
-      <!-- снег на жердях: неровными хлопьями -->
-      <g opacity=".7">
-        <path d="M672 443 q16 -5 30 -2 q-4 6 -16 6 q-11 0 -14 -4 z"/>
-        <path d="M742 448 q18 -5 34 -2 q-4 6 -18 6 q-12 0 -16 -4 z"/>
-        <path d="M830 450 q16 -4 32 -1 q-4 6 -17 6 q-11 0 -15 -5 z"/>
-        <path d="M900 452 q16 -4 30 -1 q-4 6 -16 6 q-11 0 -14 -5 z"/>
-        <path d="M700 506 q20 -5 38 -2 q-5 7 -20 7 q-13 0 -18 -5 z"/>
-        <path d="M790 514 q22 -5 40 -2 q-5 7 -21 7 q-14 0 -19 -5 z"/>
-        <path d="M880 518 q20 -5 36 -2 q-5 7 -19 7 q-13 0 -17 -5 z"/>
-      </g>
-      <!-- текстура дерева -->
-      <g stroke="#0a1230" stroke-opacity=".5" stroke-width="1.6" stroke-linecap="round" fill="none">
-        <path d="M666 420 L666 470"/><path d="M734 412 L734 466"/><path d="M802 426 L802 480"/>
-        <path d="M870 408 L870 462"/><path d="M938 420 L938 474"/>
-      </g>
-    </g>
+    <!-- передний забор (строит js) -->
+    <g id="fence-front"></g>
 
-    <!-- сугроб у самого viewer -->
-    <path d="M-620 536 C-380 518 -120 546 0 530 C180 512 320 544 520 536 C700 529 860 548 1010 540 C1220 530 1420 552 1620 544 L1620 1200 L-620 1200 Z" fill="#88aede"/>
-    <path d="M-620 558 C-300 546 60 566 1010 548 C1250 540 1440 558 1620 552 L1620 1200 L-620 1200 Z" fill="#a6c6e8" opacity=".6"/>
-    <!-- чем ниже, тем ближе к viewer: ещё три гребня, чтобы низ не был пустым -->
+    <path d="M-620 544 C-380 526 -120 552 0 538 C180 520 320 552 520 544 C700 537 860 556 1010 548 C1220 538 1420 560 1620 552 L1620 1200 L-620 1200 Z" fill="url(#d5)"/>
+    <path d="M-620 544 C-380 526 -120 552 0 538 C180 520 320 552 520 544 C700 537 860 556 1010 548 C1220 538 1420 560 1620 552" fill="none" stroke="#4d76b6" stroke-opacity=".4" stroke-width="3"/>
+    <path d="M-620 566 C-300 552 60 574 1010 556 C1250 548 1440 566 1620 560 L1620 1200 L-620 1200 Z" fill="#a6c6e8" opacity=".55"/>
     <path d="M-620 618 C-340 594 -60 630 0 612 C220 588 480 626 720 606 C860 594 940 614 1010 604 C1220 592 1420 616 1620 608 L1620 1200 L-620 1200 Z" fill="#96b6e0"/>
     <path d="M-620 696 C-320 668 -40 706 0 690 C260 662 560 704 820 680 C910 671 960 688 1010 682 C1230 670 1430 694 1620 686 L1620 1200 L-620 1200 Z" fill="#a9c8e8"/>
     <path d="M-620 794 C-240 762 220 806 1010 774 C1240 764 1440 786 1620 778 L1620 1200 L-620 1200 Z" fill="#bad3ec" opacity=".9"/>
-    <g stroke="#5f88c4" stroke-opacity=".22" stroke-width="2" fill="none" stroke-linecap="round">
-      <path d="M-400 640 C-300 630 -200 646 -100 638"/>
-      <path d="M60 620 C160 610 260 626 360 618"/>
-      <path d="M520 632 C620 622 720 636 820 628"/>
-      <path d="M1100 626 C1210 616 1320 632 1430 624"/>
-      <path d="M120 700 C240 688 360 704 480 694"/>
-      <path d="M620 712 C740 700 860 714 960 706"/>
-      <path d="M-460 712 C-340 700 -220 716 -100 706"/>
-      <path d="M1060 716 C1200 704 1340 720 1480 710"/>
-      <path d="M200 800 C360 786 520 802 680 790"/>
-      <path d="M-380 812 C-200 798 -20 814 160 802"/>
-      <path d="M900 820 C1100 806 1300 822 1500 810"/>
-    </g>
-    <!-- сухая трава из-под снега -->
-    <g stroke="#020312" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".8">
-      <path d="M436 470 C434 460 430 454 424 448"/><path d="M436 470 C438 458 442 452 448 446"/>
-      <path d="M436 470 C436 460 436 452 436 444"/>
-      <path d="M318 500 C316 492 312 486 306 481"/><path d="M318 500 C320 490 324 484 330 479"/>
-      <path d="M556 494 C554 486 550 481 545 476"/><path d="M556 494 C558 486 562 481 567 476"/>
-    </g>
 
-    <!-- тяжёлая заснеженная ветка -->
-    <g id="branch" class="tappable" role="button" tabindex="0" aria-label="Заснеженная ветка — кликните, чтобы стряхнуть снег">
-      <g stroke="#01030f" stroke-linecap="round" fill="none">
-        <path d="M1000 12 C932 30 876 66 846 112" stroke-width="23"/>
-        <path d="M956 20 C938 62 928 106 936 148" stroke-width="16"/>
-        <path d="M898 62 C856 72 818 94 796 126" stroke-width="14"/>
-        <path d="M986 -8 C944 -16 914 -6 890 14" stroke-width="12"/>
+    <!-- тени на снегу и травинки (строит js) -->
+    <g id="ground-detail"></g>
+
+    <!-- тяжёлая заснеженная ветка: сучья видны, снег лежит НА суку -->
+    <g id="branch-anchor">
+      <g id="branch" class="tappable" role="button" tabindex="0" aria-label="Заснеженная ветка — кликните, чтобы стряхнуть снег">
+        <!-- сучья: сужаются к концу -->
+        <g fill="#01030f">
+          <path d="M1006 -18 C952 2 898 40 856 90 C846 102 840 112 836 122 L858 130 C864 114 872 102 884 88 C924 42 966 14 1006 0 Z"/>
+          <path d="M960 -10 C950 34 946 78 952 122 L966 120 C960 78 962 34 972 -4 Z"/>
+          <path d="M900 44 C886 30 872 22 856 18 L853 27 C867 31 879 39 891 53 Z"/>
+          <path d="M874 84 C864 96 856 110 852 124 L861 126 C865 112 871 100 881 90 Z"/>
+          <path d="M936 22 C926 8 918 -4 912 -18 L903 -14 C909 0 917 12 927 27 Z"/>
+        </g>
+        <!-- тонкие концы -->
+        <g stroke="#01030f" stroke-width="2.6" stroke-linecap="round" fill="none">
+          <path d="M856 21 C844 16 833 15 823 19"/>
+          <path d="M853 122 C847 132 843 142 843 152"/>
+          <path d="M907 -16 C901 -24 895 -30 887 -34"/>
+          <path d="M966 118 C968 130 972 140 978 148"/>
+          <path d="M846 104 C836 108 828 116 824 126"/>
+        </g>
+        <!-- снег: тень снизу и белая шапка сверху, край острый -->
+        <g>
+          <path d="M1002 -16 q-26 -10 -46 6 q-6 10 6 13 q28 -6 42 -13 z" fill="#5f86c4"/>
+          <path d="M1000 -13 q-23 -8 -40 5 q-3 5 5 6 q24 -5 37 -11 z" fill="#eaf3fd"/>
+
+          <path d="M948 20 q-24 -8 -42 8 q-5 10 7 12 q25 -6 37 -14 z" fill="#5f86c4"/>
+          <path d="M946 23 q-21 -6 -37 6 q-3 5 6 6 q23 -6 33 -12 z" fill="#eaf3fd"/>
+
+          <path d="M908 54 q-22 -6 -38 10 q-4 9 8 11 q23 -7 32 -15 z" fill="#5f86c4"/>
+          <path d="M906 57 q-19 -4 -33 7 q-2 5 7 6 q21 -6 28 -13 z" fill="#eaf3fd"/>
+
+          <path d="M874 86 q-19 -3 -31 10 q-3 8 8 9 q19 -6 25 -13 z" fill="#5f86c4"/>
+          <path d="M872 89 q-16 -2 -26 7 q-2 5 8 5 q16 -5 20 -12 z" fill="#eaf3fd"/>
+
+          <!-- снег в развилке -->
+          <path d="M934 8 q16 -12 32 -2 q-2 16 -15 19 q-15 2 -17 -17 z" fill="#5f86c4"/>
+          <path d="M937 10 q14 -9 26 -1 q-3 11 -13 13 q-12 1 -13 -12 z" fill="#eaf3fd"/>
+
+          <!-- мелкие комья на тонких концах -->
+          <circle cx="823" cy="18" r="2.6" fill="#dcebf8"/>
+          <circle cx="887" cy="-33" r="2.4" fill="#dcebf8"/>
+          <circle cx="843" cy="151" r="2.2" fill="#dcebf8"/>
+          <circle cx="978" cy="147" r="2.2" fill="#dcebf8"/>
+        </g>
+        <!-- гирлянда: лампы на коротких проводах висят под суком -->
+        <g id="garland-branch">
+          <g stroke="#0b1226" stroke-width="1.2" fill="none">
+            <path d="M974 4 L974 18"/><path d="M930 34 L930 48"/><path d="M888 70 L888 84"/><path d="M851 104 L851 118"/>
+          </g>
+          <g class="bulb" style="--dl:-.5s" transform="translate(974,21)"><circle r="5.5" fill="url(#bulb-glow)"/><circle r="1.8" fill="#ffcf7a"/></g>
+          <g class="bulb" style="--dl:-1.9s" transform="translate(930,51)"><circle r="5.5" fill="url(#bulb-glow)"/><circle r="1.8" fill="#ff8f7a"/></g>
+          <g class="bulb" style="--dl:-1.2s" transform="translate(888,87)"><circle r="5.5" fill="url(#bulb-glow)"/><circle r="1.8" fill="#cfe4ff"/></g>
+          <g class="bulb" style="--dl:-2.6s" transform="translate(851,121)"><circle r="5.5" fill="url(#bulb-glow)"/><circle r="1.8" fill="#8ce3b8"/></g>
+        </g>
+        <rect x="810" y="-40" width="205" height="200" fill="transparent"/>
       </g>
-      <g fill="#6f96d4">
-        <path d="M986 -2 Q950 -20 922 12 Q898 36 926 48 Q964 54 994 28 Z"/>
-        <path d="M926 42 Q898 26 874 54 Q852 80 882 94 Q920 102 946 70 Z"/>
-        <path d="M868 86 Q842 72 820 100 Q800 124 830 136 Q866 142 888 112 Z"/>
-        <path d="M934 122 Q918 108 904 126 Q894 144 912 152 Q932 158 944 140 Z"/>
-        <path d="M814 118 Q800 108 788 124 Q780 138 796 144 Q814 148 824 132 Z"/>
-      </g>
-      <g fill="#e9f2fb" opacity=".95">
-        <path d="M984 2 Q952 -10 928 12 Q952 6 984 14 Z"/>
-        <path d="M924 40 Q900 28 880 48 Q902 42 924 50 Z"/>
-        <path d="M866 84 Q844 74 826 94 Q846 88 866 94 Z"/>
-        <path d="M932 120 Q920 112 910 124 Q922 120 932 126 Z"/>
-      </g>
-      <rect x="760" y="0" width="240" height="170" fill="transparent"/>
     </g>
   </svg>
 

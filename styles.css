@@ -7,9 +7,6 @@
 
 :root {
   --sky-top:   #01034a;
-  --sky-mid:   #02045c;
-  --sky-deep:  #000006;
-  --field:     #050b28;
   --snow-1:    #0c1846;
   --snow-2:    #21406f;
   --snow-3:    #2f5590;
@@ -17,7 +14,6 @@
   --snow-5:    #4f75c8;
   --snow-6:    #88aede;
   --snow-7:    #dcebf8;
-  --white:     #f2f8ff;
   --ink:       #000006;
   --lamp:      #eeb45f;
   --font: Georgia, "Times New Roman", "Palatino Linotype", serif;
@@ -100,12 +96,9 @@ body {
   overflow: clip;
   isolation: isolate;
   background:
-    /* свет над дальним полем — единственный источник воздуха */
-    radial-gradient(125% 62% at 50% 104%, rgba(79, 117, 200, .34), rgba(0, 0, 8, 0) 62%),
-    /* холодное марево над сугробами */
-    radial-gradient(70% 26% at 34% 74%, rgba(120, 160, 220, .13), rgba(0, 0, 8, 0) 70%),
-    /* колодец: центр неба проваливается в черноту */
-    radial-gradient(96% 62% at 48% 46%, rgba(0, 0, 4, .92), rgba(0, 0, 4, 0) 78%),
+    radial-gradient(125% 62% at 50% 104%, rgba(79, 117, 200, .3), rgba(0, 0, 8, 0) 62%),
+    radial-gradient(70% 26% at 34% 74%, rgba(120, 160, 220, .12), rgba(0, 0, 8, 0) 70%),
+    radial-gradient(96% 62% at 48% 46%, rgba(0, 0, 4, .9), rgba(0, 0, 4, 0) 78%),
     linear-gradient(180deg,
       #00011e 0%, #01034a 16%, #02045c 32%, #010234 44%,
       #000004 57%, #01030f 66%, #03081f 74%, #050b28 84%, #0a1440 100%);
@@ -129,22 +122,21 @@ body {
   cursor: crosshair;
 }
 
-/* плёночное зерно и виньетка: край ночи темнее */
 .vignette {
   position: absolute;
   inset: 0;
   z-index: 12;
   pointer-events: none;
   background:
-    radial-gradient(118% 86% at 50% 42%, transparent 34%, rgba(0, 0, 6, .72) 100%),
-    linear-gradient(180deg, rgba(0, 0, 6, .55) 0, transparent 22%);
+    radial-gradient(118% 86% at 50% 42%, transparent 34%, rgba(0, 0, 6, .7) 100%),
+    linear-gradient(180deg, rgba(0, 0, 6, .5) 0, transparent 22%);
 }
 .grain {
   position: absolute;
   inset: -20%;
   z-index: 14;
   pointer-events: none;
-  opacity: .055;
+  opacity: .05;
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
   animation: grain 1.4s steps(4) infinite;
@@ -224,26 +216,83 @@ body {
   100% { transform: rotate(0deg); }
 }
 
-/* окна: горят неровно, как за стеклом */
-.lit { animation: flicker 6s infinite; transition: opacity .35s; }
+/* ---------- окна: горят неровно, за стеклом кто-то ходит ---------- */
+
+.lit { animation: flicker 6s infinite; transition: opacity .35s; cursor: pointer; }
 @keyframes flicker {
-  0%, 100% { opacity: .92; }
+  0%, 100% { opacity: .93; }
   18% { opacity: .8; }
   24% { opacity: .99; }
-  41% { opacity: .7; }
+  41% { opacity: .72; }
   47% { opacity: .95; }
   66% { opacity: .84; }
   72% { opacity: 1; }
 }
 .lit.warm-burst { opacity: 1; filter: drop-shadow(0 0 16px var(--lamp)); }
 
-/* дым из трубы */
-.smoke { animation: smoke 9s ease-in-out infinite; transform-origin: 158px 300px; }
+.who, .cat-sil { opacity: 0; }
+
+.who-w1 { animation: who1 17s ease-in-out infinite; animation-delay: var(--dl, -2s); }
+@keyframes who1 {
+  0%, 8% { opacity: 0; transform: translateX(-9px); }
+  14% { opacity: .62; }
+  40% { opacity: .6; transform: translateX(11px); }
+  47%, 100% { opacity: 0; transform: translateX(15px); }
+}
+.who-w2 { animation: who2 23s ease-in-out infinite; animation-delay: var(--dl, -11s); }
+@keyframes who2 {
+  0%, 22% { opacity: 0; transform: translateX(13px); }
+  28% { opacity: .58; }
+  54% { opacity: .56; transform: translateX(-10px); }
+  61%, 100% { opacity: 0; transform: translateX(-13px); }
+}
+.who-w3 { animation: who3 27s ease-in-out infinite; animation-delay: var(--dl, -4s); }
+@keyframes who3 {
+  0%, 52% { opacity: 0; transform: translateX(-7px); }
+  58% { opacity: .58; }
+  74% { opacity: .54; transform: translateX(9px); }
+  81%, 100% { opacity: 0; transform: translateX(12px); }
+}
+.who-w4 { animation: who4 20s ease-in-out infinite; animation-delay: var(--dl, -14s); }
+@keyframes who4 {
+  0%, 30% { opacity: 0; transform: translateX(10px); }
+  36% { opacity: .56; }
+  40%, 46% { opacity: .58; transform: translateX(8px) translateY(1px); }
+  56% { opacity: .5; transform: translateX(-6px); }
+  63%, 100% { opacity: 0; transform: translateX(-8px); }
+}
+.cat-sil { animation: cat-sit 26s ease-in-out infinite; animation-delay: -9s; }
+@keyframes cat-sit {
+  0%, 5% { opacity: 0; }
+  11%, 38% { opacity: .6; }
+  45%, 100% { opacity: 0; }
+}
+
+/* ---------- дым из трубы ---------- */
+
+.smoke {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: smoke 14s ease-in-out infinite;
+  animation-delay: var(--dl, 0s);
+}
+.smoke-b { animation-duration: 17s; }
 @keyframes smoke {
-  0%   { opacity: 0; transform: translateY(10px) scaleX(.9); }
-  25%  { opacity: .55; }
-  70%  { opacity: .25; }
-  100% { opacity: 0; transform: translateY(-34px) scaleX(1.35); }
+  0%   { opacity: 0; transform: translateY(4px) scale(.85, .8); }
+  16%  { opacity: .5; }
+  52%  { opacity: .3; transform: translateY(-16px) scale(1.12, 1.25); }
+  100% { opacity: 0; transform: translateY(-40px) scale(1.45, 1.6); }
+}
+
+/* ---------- гирлянда ---------- */
+
+.bulb { opacity: .38; animation: bulb 2.6s ease-in-out infinite; animation-delay: var(--dl, 0s); }
+@keyframes bulb {
+  0%, 100% { opacity: .3; }
+  42% { opacity: 1; }
+  58% { opacity: .55; }
+  72% { opacity: .95; }
 }
 
 /* ---------- подвал: только палитра ---------- */
@@ -274,4 +323,5 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+  .smoke, .who, .cat-sil, .bulb { opacity: .5; }
 }
